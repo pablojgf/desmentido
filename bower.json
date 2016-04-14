@@ -1,0 +1,8 @@
+{
+    "name":"reticulas-template",
+    "dependencies": {
+    	"html5shiv": "3.7.3",
+        "reticulas-cssframework": "~3.3.3",
+        "jQuery": "v1.11.3"
+    }
+}

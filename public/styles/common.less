@@ -1,0 +1,97 @@
+/* COLORS --------------------------------------------------------------------*/
+
+@color-desmentido: #CF6340;
+
+@color-main: #242424;
+@color-main-medium: lighten(@color-main, 50%);
+@color-main-light: lighten(@color-main, 80%);
+
+
+/* COMMON STYLES -------------------------------------------------------------*/
+
+html {
+	font-family: 'Rubik', sans-serif;
+	color: @color-main;
+}
+
+
+/* HEADER ------------------------------------------------------------------- */
+
+.header {
+	background-color: @color-desmentido;
+	padding: 3em 2em;
+}
+
+.logo {
+	margin: 0;
+	// Sustituye texto por imagen. Esto es una clase de reticulas css framework
+	.imageback();
+	a {
+		background-image: url("/media/img/logo.svg");
+		background-repeat: no-repeat;
+		width: 100px;
+		height: 106px;
+
+		transition: all .5s ease-in-out;
+		&:hover {
+			opacity: .5;
+		}
+	}
+}
+
+.description {
+	margin-top: 10px;
+	margin-bottom: 0;
+	color: white;
+}
+
+
+/* INTRO  ------------------------------------------------------------------- */
+
+.intro {
+	padding: 8em 2em;
+	text-align: center;
+	h2 {
+		.font-size(48);
+		font-weight: 300;
+		margin-bottom: 0;
+	}
+	p {
+		color:@color-main-medium;
+		.font-size(24);
+		font-weight: 300;
+		width: 100%;
+		max-width: 780px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: .5em;
+	}
+}
+
+
+/* VIDEO  ------------------------------------------------------------------- */
+
+.video {
+	background-color: @color-main-light;
+	padding: 3em;
+}
+
+
+/* FOOTER  ------------------------------------------------------------------ */
+
+.footer {
+	background-color: @color-main;
+	padding: 6em 2em;
+	color: white;
+	p {
+		.font-size(13);
+	}
+}
+
+
+
+
+
+
+
+

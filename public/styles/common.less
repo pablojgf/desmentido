@@ -14,6 +14,20 @@ html {
 	color: @color-main;
 }
 
+.intro,
+.book {
+	p{
+		color:@color-main-medium;
+		.font-size(24);
+		font-weight: 300;
+		width: 100%;
+		max-width: 780px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: .5em;
+	}
+}
+
 
 /* HEADER ------------------------------------------------------------------- */
 
@@ -53,21 +67,29 @@ html {
 	text-align: center;
 	h2 {
 		.font-size(48);
+		font-weight: 400;
+		margin-bottom: 0;
+	}
+}
+
+
+/* BOOK  ------------------------------------------------------------------- */
+
+.book {
+	text-align: center;
+	background-color: @color-main-light;
+	padding-top: 3em;
+	h3 {
+		.font-size(48);
 		font-weight: 300;
 		margin-bottom: 0;
 	}
 	p {
-		color:@color-main-medium;
-		.font-size(24);
-		font-weight: 300;
-		width: 100%;
-		max-width: 780px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: .5em;
+		max-width: 700px;
+		margin-bottom: 0;
+		padding-bottom: 10em;
 	}
 }
-
 
 /* VIDEO  ------------------------------------------------------------------- */
 

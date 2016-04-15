@@ -16,9 +16,15 @@ html {
 
 .intro,
 .book {
+	padding: 3em 2em;
+	h2 {
+		.font-size(22);
+		font-weight: 300;
+		margin-bottom: 0;
+	}
 	p{
 		color:@color-main-medium;
-		.font-size(24);
+		.font-size(14);
 		font-weight: 300;
 		width: 100%;
 		max-width: 780px;
@@ -26,14 +32,54 @@ html {
 		margin-right: auto;
 		margin-top: .5em;
 	}
+	// A partir de 800px
+	@media (min-width:@screen-m) {
+		padding: 4em 2em;
+		h2{
+			.font-size(48);
+		}
+		p{
+			.font-size(24);
+		}
+	}
 }
 
+// Esta clase borra las flotaciones (float)
+.last{
+	clear: both;
+}
+
+.page{
+	//padding-top: 230px;
+}
 
 /* HEADER ------------------------------------------------------------------- */
 
 .header {
-	background-color: @color-desmentido;
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+	//background-color: @color-desmentido;
 	padding: 3em 2em;
+
+	//Estado cuando hace scroll
+	&.is-small{
+		padding: 1em 2em;
+		//.box-shadow(0, 0, 15px, 10px, fade(@color-main, 25%));
+		.logo{
+			a {
+				background-image: url("/media/img/logo.svg");
+				width: 29px;
+				height: 32px;
+			}
+		}
+		.description {
+			margin-top: 3px;
+			.font-size(13);
+		}
+	}
 }
 
 .logo {
@@ -46,7 +92,7 @@ html {
 		width: 100px;
 		height: 106px;
 
-		transition: all .5s ease-in-out;
+		transition: all .250s ease-in-out;
 		&:hover {
 			opacity: .5;
 		}
@@ -63,12 +109,48 @@ html {
 /* INTRO  ------------------------------------------------------------------- */
 
 .intro {
-	padding: 8em 2em;
+	height: 100vh;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
 	text-align: center;
+	background-image: url("/media/img/tronco.png");
+	background-size: cover;
+
+	@media (min-width:@screen-m) {
+		align-items: center;
+	}
+	/*
+	// Fondo en header con color
+	header{
+		padding: 2em;
+		background-color: fade(@color-main, 70%);
+		border: 2px solid fade(white, 15%);
+	}
+	*/
+
 	h2 {
-		.font-size(48);
-		font-weight: 400;
-		margin-bottom: 0;
+		color: white;
+		font-weight: 500;
+		margin: 0;
+		//text-shadow:0 0 10px #000;
+
+		// Crea linea de separacion despues del parrafo
+		&:after{
+			content: "";
+			background-color: white;
+			width: 50px;
+			height: 1px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: .5em;
+			margin-bottom: .5em;
+		}
+	}
+	p{
+		color: white;
+		//text-shadow:0 0 10px #000;
 	}
 }
 
@@ -78,24 +160,74 @@ html {
 .book {
 	text-align: center;
 	background-color: @color-main-light;
-	padding-top: 3em;
-	h3 {
-		.font-size(48);
-		font-weight: 300;
-		margin-bottom: 0;
-	}
-	p {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	.clearfix;
+	>p {
 		max-width: 700px;
-		margin-bottom: 0;
-		padding-bottom: 10em;
+		margin-bottom: 2em;
+		// Crea linea de separacion despues del parrafo
+		&:after{
+			content: "";
+			background-color: @color-main;
+			width: 50px;
+			height: 1px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 2em;
+		}
 	}
+}
+
+.book-description{
+	width: 100%;
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+	column-count: 1;
+	column-gap: 0em;
+	break-inside: avoid-column;
+	margin-bottom: 6em;
+	padding-left: 1em;
+	padding-right: 1em;
+
+	@media (min-width:@screen-m) {
+		column-count: 2;
+		column-gap: 2.5em;
+	}
+	p{
+		text-align: left;
+		.font-size(16);
+		line-height: 1.45em;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+}
+
+.book-images{
+	padding: 0;
+	margin: 0;
+ 	list-style-type: none;
+
+ 	img{
+ 		width: 100%;
+ 		height: auto;
+ 		// Arregla el problema del margin bottom en las imagenes
+ 		vertical-align: middle;
+ 	}
+ 	.book-image-half {
+ 		.row(6);
+ 	}
 }
 
 /* VIDEO  ------------------------------------------------------------------- */
 
 .video {
 	background-color: @color-main-light;
-	padding: 3em;
+	padding-bottom: 10em;
 }
 
 
@@ -103,17 +235,9 @@ html {
 
 .footer {
 	background-color: @color-main;
-	padding: 6em 2em;
+	padding: 1em 2em;
 	color: white;
 	p {
 		.font-size(13);
 	}
 }
-
-
-
-
-
-
-
-
